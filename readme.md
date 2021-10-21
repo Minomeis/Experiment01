@@ -1,5 +1,5 @@
 # 一、实验目的
-1. 基本掌握本人所选择的集成开发工具的使用方法
+1. 基本掌握IntelliJ IDEA Community Edition的使用方法
 2. 掌握Java源程序命名、运行方法
 3. 理解、掌握创建包的方法
 4. 初步了解类的实例化方法
@@ -17,18 +17,17 @@
 &emsp;&emsp;**在Customer类中新添加一个属性age，描述其年龄，并补充操作年龄的方法getAge。在测试类中调用这些方法。**
 ### **步骤四**：
 &emsp;&emsp;**在理解上述程序的情况下，尝试从头分析并复写该程序。**
-<br><br>&emsp;&emsp;对于该程序我有以下理解：
-<br>&emsp;&emsp;本程序模拟了银行录入以及更改存款人信息的系统。
-<br>&emsp;&emsp;首先建立类银行账户（Account），在里面设置属性余额（balance）。设置构造函数，能够接收输入的账户余额，设置函数getBalance获取余额，设置函数deposit用来增加余额数目，设置函数withdraw用来减少余额数目。在这其中，运用了boolean类型，进行了一下
-<br>&emsp;&emsp;然后建立类存款人员（Customer）,在里面设置属性Account类account，字符串类型firstName，以及字符串类型lastName,和整型age。构造函数，用来接收存款人的姓名和年龄。设置函数getFirstName、getLastName分别获取姓和名,以及getAccount获取银行账户,getAge获取年龄，还设置了一个setAccount函数用来更改账户，因为一人可以有多个账户。
-<br>&emsp;&emsp;最后设置一个测试类TestBanking用来测试前面两个类中的方法功能。设置main函数，创建新对象，通过调用前两个类里的函数来实现获取某个人员的姓名年龄，并且能够在执行一些账户交易，增加或减少一些价格，最后显示该人物的所有账户信息。
+<br>&emsp;&emsp;对于该程序我有以下理解：
+1. 本程序模拟了银行录入以及更改存款人信息的系统。
+2. 首先建立类银行账户（Account），在里面设置属性余额（balance）。设置构造函数，能够接收输入的账户余额，设置函数getBalance获取余额，设置函数deposit用来增加余额数目，设置函数withdraw用来减少余额数目。在这其中，运用了boolean类型，进行了一下
+3. 然后建立类存款人员（Customer）,在里面设置属性Account类account，字符串类型firstName，以及字符串类型lastName,和整型age。构造函数，用来接收存款人的姓名和年龄。设置函数getFirstName、getLastName分别获取姓和名,以及getAccount获取银行账户,getAge获取年龄，还设置了一个setAccount函数用来更改账户，因为一人可以有多个账户。
+4. 最后设置一个测试类TestBanking用来测试前面两个类中的方法功能。设置main函数，创建新对象，通过调用前两个类里的函数来实现获取某个人员的姓名年龄，并且能够在执行一些账户交易，增加或减少一些价格，最后显示该人物的所有账户信息。
 # 四、流程图
 
-![avatar](img\liucheng.png "流程图")
+![avatar](https://github.com/Minomeis/Experiment01/blob/master/img/liucheng.jpg)
 # 五、关键代码
 1. Account类里面，有两个函数用来实现存钱和取钱。通过布尔类型，来判断取钱的金额是否是这个账户能负担得起的。
-
-
+```java 
     public double getBalance(){
         return balance;
     }
@@ -46,27 +45,29 @@
         }
         return result;
     }
+```
 2. Customer类里面，添加age属性，与构造函数的参数相对应。
-    
-
-    private int age;
+```
+private int age;
+```
 3. TestBanking类里，采用如下方式，将Account和Customer实例化，并将两者联系在一起。
-
-    
+ ```
     Customer customer;
     Account account;
     customer.setAccount(new Account(500.00));
     account=customer.getAccount();
+ ```
 我在后续仔细阅读代码的过程中，认为这样一个书写方式不符合我个人的思维模式，于是改成了如下形式，并且尝试运行，成功运行。
 
-
+ ```
     Customer customer;
     Account account;
     account = new Account(500.00);
     customer.setAccount(account);
+ ```
 # 六、系统运行截图
 &emsp;&emsp;下图是本实验主程序TestBanking.java的运行结果，全部功能都得以很好的实现。
-![avatar](img\001.jpg )
+![avatar](https://github.com/Minomeis/Experiment01/blob/master/img/001.jpg)
 
 # 七、感想与体会
 &emsp;&emsp;本次实验是我们的第一次上机实验，我认为这个实验总体来说并不算困难。首先是装编译器已及Java。在这上面，虽然看似简单，但是确实也是花费了不少功夫。因为，网站都是英文的，并且还有更新所以老师给的教程可能并不适用，因此，还需要自己花费时间去查找资料，并且克服各种问题，安装成功。
