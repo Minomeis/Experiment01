@@ -1,4 +1,4 @@
-#大202 2020310853
+# 大202 2020310853
 
 ## 一、实验目的
 1. 基本掌握IntelliJ IDEA Community Edition的使用方法
