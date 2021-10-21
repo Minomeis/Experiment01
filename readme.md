@@ -47,11 +47,11 @@
     }
 ```
 2. Customer类里面，添加age属性，与构造函数的参数相对应。
-```
+```java
 private int age;
 ```
 3. TestBanking类里，采用如下方式，将Account和Customer实例化，并将两者联系在一起。
- ```
+ ```java
     Customer customer;
     Account account;
     customer.setAccount(new Account(500.00));
@@ -59,7 +59,7 @@ private int age;
  ```
 我在后续仔细阅读代码的过程中，认为这样一个书写方式不符合我个人的思维模式，于是改成了如下形式，并且尝试运行，成功运行。
 
- ```
+ ```java
     Customer customer;
     Account account;
     account = new Account(500.00);
